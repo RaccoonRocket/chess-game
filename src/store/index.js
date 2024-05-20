@@ -33,7 +33,7 @@ export default createStore({
     },
     SWITCH_PLAYER (state) {
       state.currentPlayer = state.currentPlayer === 'black' ? 'white' : 'black'
-    }
+    },
   },
   actions: {
     initBoard ({ commit }) {
