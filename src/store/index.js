@@ -19,7 +19,7 @@ export default createStore({
   },
   getters: {
     board: (state) => state.board,
-    currentPlayer: (state) => state.currentPlayer
+    currentPlayer: (state) => state.currentPlayer,
   },
   mutations: {
     SET_BOARD (state, board) {
