@@ -15,11 +15,12 @@ export default createStore({
     currentPlayer: 'white',
     selectPiece: null,
     gameOver: false,
-    historyMoves: []
+    moveHistory: []
   },
   getters: {
-    board: (state) => state.board,
-    currentPlayer: (state) => state.currentPlayer
+    getBoard: (state) => state.board,
+    getCurrentPlayer: (state) => state.currentPlayer,
+    getMoveHistory: (state) => state.moveHistory,
   },
   mutations: {
     SET_BOARD (state, board) {
@@ -29,7 +30,7 @@ export default createStore({
       const piece = state.board[from.row][from.col]
       state.board[from.row][from.col] = ''
       state.board[to.row][to.col] = piece
-      state.historyMoves.push([...state.board])
+      state.moveHistory.push([...state.board])
     },
     SWITCH_PLAYER (state) {
       state.currentPlayer = state.currentPlayer === 'black' ? 'white' : 'black'
